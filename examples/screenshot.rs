@@ -1,10 +1,5 @@
-use std::{
-    io::{self, Write},
-    time::Instant,
-};
 use windows_capture::{
     capture::{Context, GraphicsCaptureApiHandler},
-    encoder::{AudioSettingsBuilder, ContainerSettingsBuilder, VideoEncoder, VideoSettingsBuilder},
     frame::{Frame, ImageFormat},
     graphics_capture_api::InternalCaptureControl,
     monitor::Monitor,
@@ -14,7 +9,7 @@ struct Capture {}
 impl GraphicsCaptureApiHandler for Capture {
     type Flags = String;
     type Error = Box<dyn std::error::Error + Send + Sync>;
-    fn new(ctx: Context<Self::Flags>) -> Result<Self, Self::Error> {
+    fn new(_ctx: Context<Self::Flags>) -> Result<Self, Self::Error> {
         Ok(Self {})
     }
     fn on_frame_arrived(
