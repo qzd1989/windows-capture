@@ -89,7 +89,7 @@ fn main() {
         // Capture cursor settings
         CursorCaptureSettings::Default,
         // Draw border settings
-        DrawBorderSettings::WithoutBorder,
+        DrawBorderSettings::Default,
         // The desired color format for the captured frame.
         ColorFormat::Rgba8,
         // Additional flags for the capture settings that will be passed to user defined `new` function.
