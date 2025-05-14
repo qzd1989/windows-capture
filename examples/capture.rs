@@ -69,19 +69,12 @@ impl GraphicsCaptureApiHandler for Capture {
 }
 
 fn main() {
-    // Gets the foreground window, refer to the docs for other capture items
     let primary_monitor = Monitor::primary().expect("There is no primary monitor");
-
     let settings = Settings::new(
-        // Item to capture
         primary_monitor,
-        // Capture cursor settings
         CursorCaptureSettings::Default,
-        // Draw border settings
         DrawBorderSettings::Default,
-        // The desired color format for the captured frame.
         ColorFormat::Rgba8,
-        // Additional flags for the capture settings that will be passed to user defined `new` function.
         "Yea this works".to_string(),
     );
 
